@@ -19,7 +19,7 @@
      	</tr>
      	{% for obj in object_list %}
      	<tr>
-     		<td><a href ='/{{ obj.id }}/'>{{ obj.full_name }}</a></td>
+     		<td><a href ='{{ obj.id }}/'>{{ obj.full_name }}</a></td>
      		<td>{{ obj.date }}</td>
      		<td>{{ obj.type }}</td>
      		<td>{{ obj.address }}</td>
@@ -46,6 +46,7 @@
                   "properties": {
                     "full_name": "{{ obj.full_name }}",
                     "id": "{{ obj.id }}"
+                    /*"date": "{{obj.Date}}"*/
                   },
                   "geometry": {
                     "type": "Point",
@@ -58,8 +59,8 @@
             var dataLayer = L.geoJson(data, {
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
-                        '<a href="' + feature.properties.id + '/">' +
-                            feature.properties.full_name +
+                        '<a href="' + feature.properties.id + '/">' + feature.properties.full_name +
+
                         '</a>'
                     );
                 }
