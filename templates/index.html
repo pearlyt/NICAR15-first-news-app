@@ -59,9 +59,9 @@
             var dataLayer = L.geoJson(data, {
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
-                        '<a href="' + feature.properties.id + '/">' + feature.properties.full_name + '<br>'+feature.properties.date +
-
+                        '<a href="' + feature.properties.id + '/">' + feature.properties.full_name + 
                         '</a>'
+                        +'<br>'+feature.properties.date 
                     );
                 }
             });
