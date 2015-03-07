@@ -45,8 +45,8 @@
                   "type": "Feature",
                   "properties": {
                     "full_name": "{{ obj.full_name }}",
-                    "id": "{{ obj.id }}"
-                    /*"date": "{{obj.Date}}"*/
+                    "id": "{{ obj.id }}",
+                    "date": "{{ obj.date }}"
                   },
                   "geometry": {
                     "type": "Point",
@@ -59,7 +59,7 @@
             var dataLayer = L.geoJson(data, {
                 onEachFeature: function(feature, layer) {
                     layer.bindPopup(
-                        '<a href="' + feature.properties.id + '/">' + feature.properties.full_name +
+                        '<a href="' + feature.properties.id + '/">' + feature.properties.full_name + '<br>'+feature.properties.date +
 
                         '</a>'
                     );
